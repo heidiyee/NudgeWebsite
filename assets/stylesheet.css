@@ -55,8 +55,16 @@ header {
     border-bottom: 1px solid #D3D3D3;
 }
 
+header img {
+    width: 90px;
+}
+
+header li img {
+    width: 1.2em;
+}
+
 h2 {
-    padding: 1.3em 0 0.25em 0;
+    padding: 1.3em 0 0 0;
     font-size: 2.5em;
 }
 
@@ -72,6 +80,10 @@ li {
     font-size: 1.4em;
 }
 
+.social li {
+    display: inline;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -82,34 +94,32 @@ li a:hover {
 }
 
 .social {
-    padding: 0 0 1.6em 0;
+    padding: 0 0 1.3em 0;
 }
 
-.body-wrapper {
-    padding: 5.0em;
-    border-bottom: 1px solid #D3D3D3;
+.logo {
+    margin-top: 3em;
 }
 
 /* after is like adding a fake html element */
 .intro:after {
     content:". . .";
     display: block;
-    margin: 1.4em 0 0 0;
+    margin: 1.4em 0 2em 0;
 }
 
-section p {
-    padding: 0 0 2.0em 0;
+.body-wrapper {
+    margin: 3em 5em 5em 5em;
+}
+
+.intro {
     font-size: 1.6em;
-}
-
-img {
-    width: 100%;
-    margin: 0 0 3em 0;
 }
 
 .image {
     position: relative;
     display: block;
+    margin: 2em 0 2em 0;
 }
 
 .image img {
@@ -127,21 +137,21 @@ img {
 }
 
 .reveal h2 {
-    padding: 0 0 1em 0;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translatex(-50%) translateY(-50%);
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 .reveal p {
-    padding: 1.8em 0 0 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translatex(-50%) translateY(-50%);
     font-size: 1.4em;
+    margin: 1.5em 0 0 0;
+    width: 100%;
 }
 
 .image:hover .reveal {
@@ -151,15 +161,106 @@ img {
 footer {
     padding: 2.0em;
     font-size: 1.4em;
+    clear: both;
+    border-top: 1px solid #D3D3D3;
 }
-
-.half {
-    width:50%;
-}
-
-/*break points for different screen sizes. Min width of 640px for iphone 5*/
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 475px) {
     li {
         display: inline;
+    }
+/*break points for different screen sizes. Min width of 640px for iphone 5*/
+@media screen and (min-width: 640px) {
+    .intro {
+        padding: 1.5em 0 1em 0;
+        font-size: 2.0em;
+    }
+
+    .intro:after {
+        margin: 1.4em 0 1em 0;
+    }
+
+    .body-wrapper {
+        max-width: 1150px;
+    }
+
+    .body-wrapper > p {
+        margin: 0 5em 0 5em;
+    }
+
+
+/*change top nav so logo, full nav, and social nav is all inline*/
+@media screen and (min-width: 770px) {
+    nav .logo, .navigation, .social {
+        display: inline-block;
+        position: relative;
+        margin: 2em;
+    }
+
+    .logo {
+        position: absolute;
+        /*top: 50%;*/
+        transform: translateY(50%);
+        float: left;
+        padding: 0 3em 0 3em;
+    }
+
+    .navigation {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social {
+        float: right;
+    }
+
+    .intro {
+        font-size: 2.4em;
+    }
+
+    .image {
+        display: inline-block;
+        margin: 1em 0 1em 0;
+    }
+
+    .body-wrapper a:nth-last-child(4) {
+        width: 48%;
+        float: left;
+    }
+
+    .body-wrapper a:nth-last-child(3) {
+        width: 48%;
+        float: right;
+    }
+
+    .body-wrapper a:nth-last-child(2) {
+        width: 65%;
+        float: left;
+        margin-bottom: 5em;
+    }
+
+    .body-wrapper a:nth-last-child(1) {
+        width: 31.5%;
+        float: right;
+        margin-bottom: 5em;
+    }
+
+    .reveal {
+        display: block;
+    }
+
+    .reveal h2 {
+        font-size: 1.8em;
+    }
+
+    .image .small-width {
+         width: 100%;
+         margin: 2em 0 0 0;
+    }
+
+}
+
+@media screen and (min-width: 1270px) {
+    .body-wrapper {
+        margin: auto;
     }
 }
