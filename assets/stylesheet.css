@@ -1,48 +1,8 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+/*******************
+start of custom css
+********************/
 
-/* LEAVE EVERYTHING ABOVE THIS LINE ALONE, this resets browser defaults */
+/*start with smallest sized window*/
 
 body {
     background-color: white;
@@ -71,17 +31,23 @@ h2 {
 ul {
     list-style-type: none;
     background-color: white;
-    margin: 3.0em;
+    margin: 2.5em;
+	padding: 0;
 }
 
+/*block main navigation and changing nav fonts*/
 li {
     display: block;
-    padding: 0.5em;
+    padding: .25em 1em;
     font-size: 1.4em;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
 }
 
+/* inline block social nav*/
 .social li {
     display: inline;
+    padding: .25em .5em;
 }
 
 a {
@@ -93,19 +59,8 @@ li a:hover {
     color:pink;
 }
 
-.social {
-    padding: 0 0 1.3em 0;
-}
-
 .logo {
     margin-top: 3em;
-}
-
-/* after is like adding a fake html element */
-.intro:after {
-    content:". . .";
-    display: block;
-    margin: 1.4em 0 2em 0;
 }
 
 .body-wrapper {
@@ -113,18 +68,28 @@ li a:hover {
 }
 
 .intro {
-    font-size: 1.6em;
+    font-size: 1.8em;
+    font-family: 'Gilda Display', sans-serif;
 }
 
+    /* after is like adding a fake html element */
+    .intro:after {
+        content:". . .";
+        display: block;
+        margin: 1.4em 0 2em 0;
+    }
+
+
+/*absolute div will follow relative */
 .image {
     position: relative;
     display: block;
     margin: 2em 0 2em 0;
 }
 
-.image img {
-    width: 100%;
-}
+    .image img {
+        width: 100%;
+    }
 
 .reveal {
     position: absolute;
@@ -136,23 +101,23 @@ li a:hover {
     -webkit-transition: all 0.5s;
 }
 
-.reveal h2 {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translatex(-50%) translateY(-50%);
-    font-size: 1.6em;
-}
+    .reveal h2 {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translatex(-50%) translateY(-50%);
+        font-size: 1.6em;
+    }
 
-.reveal p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translatex(-50%) translateY(-50%);
-    font-size: 1.4em;
-    margin: 1.5em 0 0 0;
-    width: 100%;
-}
+    .reveal p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translatex(-50%) translateY(-50%);
+        font-size: 1.4em;
+        margin: 1.5em 0 0 0;
+        width: 100%;
+    }
 
 .image:hover .reveal {
     opacity: 0.95;
@@ -163,32 +128,33 @@ footer {
     font-size: 1.4em;
     clear: both;
     border-top: 1px solid #D3D3D3;
+    font-family: 'Catamaran', sans-serif;
 }
+
+/*breakpoint to inline both main and social navigation*/
 @media screen and (min-width: 475px) {
     li {
         display: inline;
     }
-/*break points for different screen sizes. Min width of 640px for iphone 5*/
+/*breakpoint 640px for iphone 5*/
 @media screen and (min-width: 640px) {
     .intro {
-        padding: 1.5em 0 1em 0;
         font-size: 2.0em;
     }
 
-    .intro:after {
-        margin: 1.4em 0 1em 0;
-    }
+        .intro:after {
+            margin: 1.4em 0 1em 0;
+        }
 
     .body-wrapper {
         max-width: 1150px;
     }
 
-    .body-wrapper > p {
-        margin: 0 5em 0 5em;
-    }
 
-
-/*change top nav so logo, full nav, and social nav is all inline*/
+/*****************************************
+change top nav so logo, full nav, and social nav are all inline
+changed image grid to inline block
+****************************************/
 @media screen and (min-width: 770px) {
     nav .logo, .navigation, .social {
         display: inline-block;
@@ -198,10 +164,13 @@ footer {
 
     .logo {
         position: absolute;
-        /*top: 50%;*/
         transform: translateY(50%);
         float: left;
-        padding: 0 3em 0 3em;
+        padding: 0 3em;
+    }
+
+    .social {
+        float: right;
     }
 
     .navigation {
@@ -209,17 +178,14 @@ footer {
         margin-right: auto;
     }
 
-    .social {
-        float: right;
-    }
-
     .intro {
+        padding: 1em 5em;
         font-size: 2.4em;
     }
 
     .image {
         display: inline-block;
-        margin: 1em 0 1em 0;
+        margin: 1em 0;
     }
 
     .body-wrapper a:nth-last-child(4) {
@@ -248,9 +214,9 @@ footer {
         display: block;
     }
 
-    .reveal h2 {
-        font-size: 1.8em;
-    }
+        .reveal h2 {
+            font-size: 1.8em;
+        }
 
     .image .small-width {
          width: 100%;
@@ -259,8 +225,9 @@ footer {
 
 }
 
-@media screen and (min-width: 1270px) {
+/*To retain div layout and keep image layout centered on the page*/
+@media screen and (min-width: 1250px) {
     .body-wrapper {
-        margin: auto;
+        margin: 1.4em auto;
     }
 }
