@@ -9,10 +9,12 @@ body {
     /* Makes body 10px by default, therefore 1em is 10px */
     font-size: 62.5%;
     text-align: center;
+    font-family: 'Catamaran', sans-serif;
 }
 
+/*Add underline after heading*/
 header {
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #DEDEDE;
 }
 
 header img {
@@ -28,6 +30,11 @@ h2 {
     font-size: 2.5em;
 }
 
+h4 {
+    padding: 0;
+    font-size: 1.4em;
+}
+
 ul {
     list-style-type: none;
     background-color: white;
@@ -38,10 +45,13 @@ ul {
 /*block main navigation and changing nav fonts*/
 li {
     display: block;
-    padding: .25em 1em;
+    padding: 0 1em .5em 1em;
     font-size: 1.4em;
-    font-family: 'Catamaran', sans-serif;
     font-weight: 300;
+}
+
+p {
+    font-weight: lighter;
 }
 
 /* inline block social nav*/
@@ -59,6 +69,7 @@ li a:hover {
     color:pink;
 }
 
+/* To keep logo from hitting the top of webpage*/
 .logo {
     margin-top: 3em;
 }
@@ -69,7 +80,9 @@ li a:hover {
 
 .intro {
     font-size: 1.8em;
-    font-family: 'Gilda Display', sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 100;
+    padding: 0 1em;
 }
 
     /* after is like adding a fake html element */
@@ -80,7 +93,9 @@ li a:hover {
     }
 
 
-/*absolute div will follow relative */
+/**********************************
+Made for when images are added to the site
+*******************************/
 .image {
     position: relative;
     display: block;
@@ -123,19 +138,52 @@ li a:hover {
     opacity: 0.95;
 }
 
+/*for vertical text that is used for things such as contact info*/
+.two-columns {
+    width: 200px;
+    margin: 0 auto;
+}
+
+    .two-columns h4 {
+        border-bottom: 1px solid #DEDEDE;
+        padding-bottom: 1em;
+    }
+
+    .two-columns p {
+        padding-bottom: 1.4em;
+        font-size: 1.6em;
+    }
+
 footer {
     padding: 2.0em;
     font-size: 1.4em;
     clear: both;
-    border-top: 1px solid #D3D3D3;
-    font-family: 'Catamaran', sans-serif;
+    border-top: 1px solid #DEDEDE;
 }
 
-/*breakpoint to inline both main and social navigation*/
+    footer p {
+        font-weight: normal;
+    }
+
+
+
+
+/***************************
+breakpoint to inline both main and social navigation
+************************/
 @media screen and (min-width: 475px) {
     li {
         display: inline;
     }
+
+    .intro {
+        padding: 0 2em;
+    }
+}
+
+
+
+
 /*breakpoint 640px for iphone 5*/
 @media screen and (min-width: 640px) {
     .intro {
@@ -143,17 +191,20 @@ footer {
     }
 
         .intro:after {
-            margin: 1.4em 0 1em 0;
+            margin: 1.4em 0 2em 0;
         }
 
     .body-wrapper {
         max-width: 1150px;
     }
+}
+
+
 
 
 /*****************************************
 change top nav so logo, full nav, and social nav are all inline
-changed image grid to inline block
+changed images grid to inline block
 ****************************************/
 @media screen and (min-width: 770px) {
     nav .logo, .navigation, .social {
@@ -179,8 +230,8 @@ changed image grid to inline block
     }
 
     .intro {
-        padding: 1em 5em;
-        font-size: 2.4em;
+        padding: 0 5em;
+        font-size: 2.2em;
     }
 
     .image {
@@ -223,11 +274,49 @@ changed image grid to inline block
          margin: 2em 0 0 0;
     }
 
+    /* Increased width to inline all contact info */
+    .two-columns {
+        width: 550px;
+        height: 140px;
+        display: flex;
+    }
+
+    .vertical {
+        flex: 1;
+        display: inline-block;
+        padding: 1em;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+        /* Rotates header for contact info */
+        .vertical h4 {
+            -webkit-writing-mode: vertical-lr;
+            writing-mode: vertical-lr;
+            float: left;
+            padding: 0;
+            margin: 0 1em;
+            border-bottom: none;
+            display: inline-block;
+        }
+
+        .vertical p {
+            display: inline-block;
+            padding: 0 1em;
+            margin: 0;
+            border-left: 1px solid #DEDEDE;
+            position: absolute;
+            height: 100%;
+        }
+
 }
+
+
 
 /*To retain div layout and keep image layout centered on the page*/
 @media screen and (min-width: 1250px) {
     .body-wrapper {
-        margin: 1.4em auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
