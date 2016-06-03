@@ -1,5 +1,5 @@
 /*******************
-start of custom css
+General area of custom css
 ********************/
 
 /*start with smallest sized window*/
@@ -54,12 +54,6 @@ p {
     font-weight: lighter;
 }
 
-/* inline block social nav*/
-.social li {
-    display: inline;
-    padding: .25em .5em;
-}
-
 a {
     text-decoration: none;
     color: black;
@@ -67,6 +61,15 @@ a {
 
 li a:hover {
     color:pink;
+}
+
+
+/*Heading*/
+
+/* inline block social nav*/
+.social li {
+    display: inline;
+    padding: .25em .5em;
 }
 
 /* To keep logo from hitting the top of webpage*/
@@ -94,7 +97,7 @@ li a:hover {
 
 
 /**********************************
-Made for when images are added to the site
+Images added to homepage
 *******************************/
 .image {
     position: relative;
@@ -180,7 +183,6 @@ breakpoint to inline both main and social navigation
         padding: 0 2em;
     }
 }
-
 
 
 
@@ -281,6 +283,10 @@ changed images grid to inline block
         display: flex;
     }
 
+
+    /*********************
+    for Contact page
+    **********************/
     .vertical {
         flex: 1;
         display: inline-block;
