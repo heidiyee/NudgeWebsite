@@ -100,13 +100,14 @@ li a:hover {
 Images added to homepage
 *******************************/
 .image {
+    margin: 2em 0 2em 0;
     position: relative;
     display: block;
-    margin: 2em 0 2em 0;
 }
 
     .image img {
         width: 100%;
+        display: block;
     }
 
 .reveal {
@@ -123,17 +124,19 @@ Images added to homepage
         position: absolute;
         top: 45%;
         left: 50%;
-        transform: translatex(-50%) translateY(-50%);
+        transform: translatex(-50%);
         font-size: 1.6em;
+        padding: 0;
+        margin: 0;
     }
 
     .reveal p {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
-        transform: translatex(-50%) translateY(-50%);
+        transform: translatex(-50%);
         font-size: 1.4em;
-        margin: 1.5em 0 0 0;
+        margin: 1.6em 0 0 0;
         width: 100%;
     }
 
@@ -170,11 +173,10 @@ footer {
 
 
 
-
 /***************************
 breakpoint to inline both main and social navigation
 ************************/
-@media screen and (min-width: 475px) {
+@media screen and (min-width: 480px) {
     li {
         display: inline;
     }
@@ -205,11 +207,11 @@ breakpoint to inline both main and social navigation
 
 
 /*****************************************
-change top nav so logo, full nav, and social nav are all inline
-changed images grid to inline block
+- change top nav so logo, full nav, and social nav are all inline
+- changed images grid to inline block
 ****************************************/
 @media screen and (min-width: 770px) {
-    nav .logo, .navigation, .social {
+    header .logo, .main, .social {
         display: inline-block;
         position: relative;
         margin: 2em;
@@ -226,7 +228,7 @@ changed images grid to inline block
         float: right;
     }
 
-    .navigation {
+    .main {
         margin-left: auto;
         margin-right: auto;
     }
@@ -279,7 +281,7 @@ changed images grid to inline block
     /* Increased width to inline all contact info */
     .two-columns {
         width: 550px;
-        height: 140px;
+        height: 160px;
         display: flex;
     }
 
@@ -296,7 +298,7 @@ changed images grid to inline block
         overflow: hidden;
     }
         /* Rotates header for contact info */
-        .vertical h4 {
+        h4.vertical {
             -webkit-writing-mode: vertical-lr;
             writing-mode: vertical-lr;
             float: left;
