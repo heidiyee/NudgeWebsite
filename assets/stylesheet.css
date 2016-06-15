@@ -281,8 +281,9 @@ breakpoint to inline both main and social navigation
     /* Increased width to inline all contact info */
     .two-columns {
         width: 550px;
-        height: 160px;
+        height: 140px;
         display: flex;
+        margin-bottom: 5.0em;
     }
 
 
@@ -298,9 +299,9 @@ breakpoint to inline both main and social navigation
         overflow: hidden;
     }
         /* Rotates header for contact info */
-        h4.vertical {
-            -webkit-writing-mode: vertical-lr;
-            writing-mode: vertical-lr;
+        .vertical h4 {
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
             float: left;
             padding: 0;
             margin: 0 1em;
