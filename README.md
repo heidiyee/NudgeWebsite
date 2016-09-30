@@ -1,2 +1,2 @@
 # NudgeWebsite
-Cloned website http://studionudge.com/ to learn and practice HTML5 and CSS3. 
+Cloned website studionudge.com to learn HTML5 and CSS3.
